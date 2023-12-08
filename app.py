@@ -17,7 +17,7 @@ import string
 import secrets
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
-import onnxruntime
+
 
 
 
@@ -29,11 +29,7 @@ app = Flask(__name__)
 codigouser = None
 
 # Configuración para usar el proveedor de ejecución CPU
-providers = ['CPUExecutionProvider']
-options = { "providers": providers }
 
-# Crear el motor ONNX Runtime con la configuración especificada
-ort_session = onnxruntime.InferenceSession("inswapper_128.onnx", providers=providers, provider_options=[options])
 
 # Ahora puedes usar ort_session para realizar inferencias
 
