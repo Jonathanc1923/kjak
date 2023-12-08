@@ -22,6 +22,12 @@ import onnxruntime
 
 
 
+
+
+
+app = Flask(__name__)
+codigouser = None
+
 # Configuración para usar el proveedor de ejecución CPU
 providers = ['CPUExecutionProvider']
 options = { "providers": providers }
@@ -30,12 +36,6 @@ options = { "providers": providers }
 ort_session = onnxruntime.InferenceSession("inswapper_128.onnx", providers=providers, provider_options=[options])
 
 # Ahora puedes usar ort_session para realizar inferencias
-
-
-app = Flask(__name__)
-codigouser = None
-
-
 
 a = 1
 
